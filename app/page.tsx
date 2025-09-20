@@ -43,7 +43,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="min-h-screen px-6 sm:px-12 bg-[#1B1B1B]">
+        <div className="min-h-screen px-6 sm:px-12 dark:bg-[#1B1B1B] bg-[#F5F5F5]">
             <main>
                 <div className="sticky top-0 z-20 pt-4 sm:pt-4">
                     <div className="flex items-center justify-between h-16">
@@ -54,12 +54,14 @@ export default function Home() {
                                     alt="Logo"
                                     width={48}
                                     height={48}
-                                    className="invert sm:w-16 sm:h-16 w-12 h-12"
+                                    className={`sm:w-16 sm:h-16 w-12 h-12 transition-filter duration-300
+                                        ${menuOpen ? "invert" : "dark:invert"}
+                                    `}
                                 />
                             </Link>
                         </div>
 
-                        <div className="hidden sm:flex gap-8 text-lg px-6 py-2 rounded-lg backdrop-blur bg-[#232323]/60">
+                        <div className="hidden sm:flex gap-8 text-lg px-6 py-3 rounded-lg backdrop-blur dark:bg-[#232323]/60 bg-black/90 text-white">
                             <Link href="/about" className="hover:underline">
                                 About
                             </Link>
@@ -69,7 +71,7 @@ export default function Home() {
                             </Link>
                         </div>
 
-                        <div className="text-lg flex px-3 py-2 sm:px-6 sm:py-2 rounded-lg backdrop-blur bg-[#232323]/60">
+                        <div className="text-lg flex px-3 py-2 sm:px-6 sm:py-3 rounded-lg backdrop-blur dark:bg-[#232323]/60 bg-black/90 text-white">
                             <Link href="/contact" className="hidden sm:block hover:underline">
                                 Contact
                             </Link>
@@ -92,7 +94,7 @@ export default function Home() {
 
                 {showMenu && (
                     <div
-                        className={`fixed top-5 inset-x-4 z-10 rounded-xl bg-black shadow-lg transform transition-transform duration-300 ease-out
+                        className={`fixed top-5 inset-x-4 z-10 rounded-xl bg-black text-white shadow-lg transform transition-transform duration-300 ease-out
                             ${menuScale ? "scale-100" : "scale-0"}
                             ${menuFade ? "opacity-100" : "opacity-0"}
                         `} style={{ transformOrigin: "top right" }}
