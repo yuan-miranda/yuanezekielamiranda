@@ -80,25 +80,13 @@ export default function Home() {
                         style={{ transformOrigin: "top right" }}
                     >
                         <div className="flex flex-col items-center justify-center py-30 gap-6 text-xl">
-                            <Link
-                                href="/about"
-                                className="hover:underline"
-                                onClick={() => setMenuOpen(false)}
-                            >
+                            <Link href="/about" className="hover:underline" onClick={() => setMenuOpen(false)}>
                                 About
                             </Link>
-                            <Link
-                                href="/projects"
-                                className="hover:underline"
-                                onClick={() => setMenuOpen(false)}
-                            >
+                            <Link href="/projects" className="hover:underline" onClick={() => setMenuOpen(false)}>
                                 Projects
                             </Link>
-                            <Link
-                                href="/contact"
-                                className="hover:underline"
-                                onClick={() => setMenuOpen(false)}
-                            >
+                            <Link href="/contact" className="hover:underline" onClick={() => setMenuOpen(false)}>
                                 Contact
                             </Link>
                         </div>
