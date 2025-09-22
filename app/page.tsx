@@ -8,7 +8,7 @@ export default function Home() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <div className="min-h-screen px-6 sm:px-12 dark:bg-[#1B1B1B] bg-[#F5F5F5]">
+        <div className="min-h-screen px-6 sm:px-12">
             <main>
                 <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
                 <div

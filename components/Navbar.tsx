@@ -15,6 +15,28 @@ export default function Navbar({ menuOpen, setMenuOpen }: NavbarProps) {
     const [menuScale, setMenuScale] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const [menuFade, setMenuFade] = useState(false);
+    const [theme, setTheme] = useState<"light" | "dark">("light");
+
+    // load theme
+    useEffect(() => {
+        const storedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+        if (storedTheme) {
+            setTheme(storedTheme);
+            document.documentElement.classList.toggle("dark", storedTheme === "dark");
+        } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            setTheme(prefersDark ? "dark" : "light");
+            document.documentElement.classList.toggle("dark", prefersDark);
+        }
+    }, []);
+
+    // save theme
+    const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+        document.documentElement.classList.toggle("dark", newTheme === "dark");
+    }
 
     // open/close animation
     useEffect(() => {
@@ -74,10 +96,14 @@ export default function Navbar({ menuOpen, setMenuOpen }: NavbarProps) {
                         </Link>
                     </div>
 
-
                     <div className="flex items-center gap-4">
-                        <Sun className="cursor-pointer w-6 h-7" />
-                        <Moon className="cursor-pointer w-6 h-7 hidden" />
+                        <div>
+                            {theme === "light" ? (
+                                <Moon className="cursor-pointer w-6 h-7" onClick={toggleTheme} />
+                            ) : (
+                                <Sun className="cursor-pointer w-6 h-7" onClick={toggleTheme} />
+                            )}
+                        </div>
 
                         <div className="text-lg flex px-3 py-2 sm:px-6 sm:py-3 rounded-lg backdrop-blur dark:bg-[#232323]/60 bg-black/90 text-white">
                             <Link href="/contact" className="hidden sm:block hover:underline">
