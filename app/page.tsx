@@ -2,26 +2,25 @@
 "use client";
 
 import Header from "../components/Header";
-import { AtSign } from "lucide-react";
 
 export default function Home() {
     return (
         <div className="min-h-screen px-6 sm:px-12 max-w-7xl mx-auto">
             <Header />
             <main>
-                {/* hero section */}
                 <div className="flex flex-col pt-32 pb-8 sm:pb-24 sm:pt-96">
                     <span className="text-4xl sm:text-9xl font-mono font-bold">Hi, I&apos;m Yuan
-                        {/* <AtSign className="inline-block sm:h-16 sm:w-16 ml-2 sm:ml-4" /> */}
                     </span>
-                    <span className="text-2xl sm:text-6xl font-serif">Front-end Developer</span>
+                    <span className="text-2xl sm:text-6xl font-serif">Frontend Developer</span>
                 </div>
 
                 <div className="max-w-2xl pb-32 sm:pb-48 text-justify">
                     <span
-                        className="text-lg sm:text-2xl font-sans"
-                    >Hey there! I&apos;m Yuan Ezekiel A. Miranda, an unemployed developer from San Luis, Pampanga, and a student at STI College Baliuag.
-                        This is my personal website 2.0 — LMAOOO</span>
+                        className="sm:text-2xl font-sans"
+                    >
+                        Hey there! I&apos;m Yuan Ezekiel A. Miranda, an unemployed developer from San Luis, Pampanga, and a student at STI College Baliuag.
+                        This is my personal website 2.0 — LMAOOO
+                    </span>
                 </div>
 
 
