@@ -14,7 +14,7 @@ export default function Home() {
                     <span className="text-2xl sm:text-6xl font-serif">Frontend Developer</span>
                 </div>
 
-                <div className="max-w-2xl pb-32 sm:pb-48 text-justify">
+                <div className="max-w-2xl pb-16 sm:pb-48 text-justify">
                     <span
                         className="sm:text-2xl font-sans"
                     >
